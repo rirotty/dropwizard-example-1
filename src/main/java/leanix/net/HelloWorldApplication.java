@@ -5,6 +5,7 @@ import io.dropwizard.configuration.EnvironmentVariableSubstitutor;
 import io.dropwizard.configuration.SubstitutingSourceProvider;
 import io.dropwizard.setup.Bootstrap;
 import io.dropwizard.setup.Environment;
+import leanix.net.core.GreetingService;
 import leanix.net.resources.HelloWorldResource;
 
 public class HelloWorldApplication extends Application<AppConfiguration> {
@@ -32,7 +33,7 @@ public class HelloWorldApplication extends Application<AppConfiguration> {
     @Override
     public void run(final AppConfiguration configuration,
                     final Environment environment) {
-        environment.jersey().register(new HelloWorldResource());
+        environment.jersey().register(new HelloWorldResource(new GreetingService()));
     }
 
 }
