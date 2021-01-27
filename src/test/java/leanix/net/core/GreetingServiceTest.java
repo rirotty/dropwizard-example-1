@@ -10,6 +10,6 @@ class GreetingServiceTest {
     void greeting() {
         final GreetingService greetingService = new GreetingService();
         final String greeting = greetingService.greeting();
-        assertThat(greeting).isEqualTo("Hello LeanIx!!");
+        assertThat(greeting).isEqualTo("Hello LeanIx !!!");
     }
 }
